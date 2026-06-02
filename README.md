@@ -144,7 +144,6 @@ yosys cpu.ys
 | ALU (alu)                     |        637 |
 | Control Unit (control)        |         26 |
 | Instruction Decoder (decoder) |         11 |
-![Uploading image.png…]()
 
 ### Total Estimated Logic
 

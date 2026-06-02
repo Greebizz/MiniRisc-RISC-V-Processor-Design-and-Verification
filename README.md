@@ -125,28 +125,61 @@ x3 = 30
 x4 = 30
 ```
 
-## Synthesis
+## Synthesis Results
 
-RTL was synthesized using Yosys.
+The MiniRisc processor RTL was synthesized using **Yosys Open Synthesis Suite**.
 
-Example synthesis flow:
+### Synthesis Flow
 
 ```bash
 yosys cpu.ys
 ```
 
-Generated outputs:
+### Module Statistics
 
-* cpu_netlist.v
-* alu_netlist.v
+| Module                        | Cell Count |
+| ----------------------------- | ---------: |
+| Data Memory (dmem)            |       3380 |
+| Register File (regfile)       |       3767 |
+| ALU (alu)                     |        637 |
+| Control Unit (control)        |         26 |
+| Instruction Decoder (decoder) |         11 |
+![Uploading image.png…]()
 
-## Tools Used
+### Total Estimated Logic
+
+```text
+≈ 7821 cells
+```
+
+The majority of the synthesized area is occupied by:
+
+* Register File (32 × 32-bit registers)
+* Data Memory
+* Arithmetic Logic Unit (ALU)
+
+This is expected because both the register file and memory are synthesized into flip-flops and combinational logic when no dedicated memory macros are used.
+
+### Generated Outputs
+
+The synthesis process generated the following gate-level netlists:
+
+```text
+alu_netlist.v
+cpu_netlist.v
+```
+
+### Tools Used
 
 * Verilog HDL
 * Icarus Verilog
 * GTKWave
 * Yosys
 * Visual Studio Code
+
+```
+```
+
 
 ## Project Structure
 

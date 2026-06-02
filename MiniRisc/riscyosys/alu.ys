@@ -1,0 +1,4 @@
+read_verilog ..\rtl\rtl_alu.v
+synth -top alu
+stat
+write_verilog alu_netlist.v

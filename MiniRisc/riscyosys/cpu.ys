@@ -1,0 +1,12 @@
+read_verilog ..\rtl\rtl_alu.v
+read_verilog ..\rtl\control.v
+read_verilog ..\rtl\regfile.v
+read_verilog ..\rtl\rtl_decoder.v
+read_verilog ..\rtl\dmem.v
+read_verilog ..\rtl\cpu_top.v
+
+synth -top cpu_top
+
+stat
+
+write_verilog cpu_netlist.v

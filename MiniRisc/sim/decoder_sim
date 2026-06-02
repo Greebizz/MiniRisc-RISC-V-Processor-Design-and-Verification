@@ -1,0 +1,75 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "D:\virtualbox\iverilog\lib\ivl\system.vpi";
+:vpi_module "D:\virtualbox\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "D:\virtualbox\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "D:\virtualbox\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "D:\virtualbox\iverilog\lib\ivl\va_math.vpi";
+S_000001fc26a5d620 .scope module, "decoder_tb" "decoder_tb" 2 3;
+ .timescale -9 -12;
+v000001fc26b62e50_0 .net "funct3", 2 0, L_000001fc26b630d0;  1 drivers
+v000001fc26b637b0_0 .net "funct7", 6 0, L_000001fc26b63210;  1 drivers
+v000001fc26b633f0_0 .net "imm", 31 0, L_000001fc26b64fe0;  1 drivers
+v000001fc26b63350_0 .var "instr", 31 0;
+v000001fc26b628b0_0 .net "opcode", 6 0, L_000001fc26b62a90;  1 drivers
+v000001fc26b62db0_0 .net "rd", 4 0, L_000001fc26b62bd0;  1 drivers
+v000001fc26b63030_0 .net "rs1", 4 0, L_000001fc26b62c70;  1 drivers
+v000001fc26b629f0_0 .net "rs2", 4 0, L_000001fc26b63170;  1 drivers
+S_000001fc26a5d7b0 .scope module, "uut" "decoder" 2 15, 3 1 0, S_000001fc26a5d620;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "instr";
+    .port_info 1 /OUTPUT 7 "opcode";
+    .port_info 2 /OUTPUT 5 "rd";
+    .port_info 3 /OUTPUT 3 "funct3";
+    .port_info 4 /OUTPUT 5 "rs1";
+    .port_info 5 /OUTPUT 5 "rs2";
+    .port_info 6 /OUTPUT 7 "funct7";
+    .port_info 7 /OUTPUT 32 "imm";
+v000001fc26a57090_0 .net *"_ivl_13", 0 0, L_000001fc26b632b0;  1 drivers
+v000001fc26b63490_0 .net *"_ivl_14", 19 0, L_000001fc26b63960;  1 drivers
+v000001fc26b62ef0_0 .net *"_ivl_17", 11 0, L_000001fc26b64360;  1 drivers
+v000001fc26b635d0_0 .net "funct3", 2 0, L_000001fc26b630d0;  alias, 1 drivers
+v000001fc26b62d10_0 .net "funct7", 6 0, L_000001fc26b63210;  alias, 1 drivers
+v000001fc26b62f90_0 .net "imm", 31 0, L_000001fc26b64fe0;  alias, 1 drivers
+v000001fc26b63530_0 .net "instr", 31 0, v000001fc26b63350_0;  1 drivers
+v000001fc26b63670_0 .net "opcode", 6 0, L_000001fc26b62a90;  alias, 1 drivers
+v000001fc26b62b30_0 .net "rd", 4 0, L_000001fc26b62bd0;  alias, 1 drivers
+v000001fc26b62950_0 .net "rs1", 4 0, L_000001fc26b62c70;  alias, 1 drivers
+v000001fc26b63710_0 .net "rs2", 4 0, L_000001fc26b63170;  alias, 1 drivers
+L_000001fc26b62a90 .part v000001fc26b63350_0, 0, 7;
+L_000001fc26b62bd0 .part v000001fc26b63350_0, 7, 5;
+L_000001fc26b630d0 .part v000001fc26b63350_0, 12, 3;
+L_000001fc26b62c70 .part v000001fc26b63350_0, 15, 5;
+L_000001fc26b63170 .part v000001fc26b63350_0, 20, 5;
+L_000001fc26b63210 .part v000001fc26b63350_0, 25, 7;
+L_000001fc26b632b0 .part v000001fc26b63350_0, 31, 1;
+LS_000001fc26b63960_0_0 .concat [ 1 1 1 1], L_000001fc26b632b0, L_000001fc26b632b0, L_000001fc26b632b0, L_000001fc26b632b0;
+LS_000001fc26b63960_0_4 .concat [ 1 1 1 1], L_000001fc26b632b0, L_000001fc26b632b0, L_000001fc26b632b0, L_000001fc26b632b0;
+LS_000001fc26b63960_0_8 .concat [ 1 1 1 1], L_000001fc26b632b0, L_000001fc26b632b0, L_000001fc26b632b0, L_000001fc26b632b0;
+LS_000001fc26b63960_0_12 .concat [ 1 1 1 1], L_000001fc26b632b0, L_000001fc26b632b0, L_000001fc26b632b0, L_000001fc26b632b0;
+LS_000001fc26b63960_0_16 .concat [ 1 1 1 1], L_000001fc26b632b0, L_000001fc26b632b0, L_000001fc26b632b0, L_000001fc26b632b0;
+LS_000001fc26b63960_1_0 .concat [ 4 4 4 4], LS_000001fc26b63960_0_0, LS_000001fc26b63960_0_4, LS_000001fc26b63960_0_8, LS_000001fc26b63960_0_12;
+LS_000001fc26b63960_1_4 .concat [ 4 0 0 0], LS_000001fc26b63960_0_16;
+L_000001fc26b63960 .concat [ 16 4 0 0], LS_000001fc26b63960_1_0, LS_000001fc26b63960_1_4;
+L_000001fc26b64360 .part v000001fc26b63350_0, 20, 12;
+L_000001fc26b64fe0 .concat [ 12 20 0 0], L_000001fc26b64360, L_000001fc26b63960;
+    .scope S_000001fc26a5d620;
+T_0 ;
+    %pushi/vec4 10485907, 0, 32;
+    %store/vec4 v000001fc26b63350_0, 0, 32;
+    %delay 10000, 0;
+    %vpi_call 2 32 "$display", "opcode=%b", v000001fc26b628b0_0 {0 0 0};
+    %vpi_call 2 33 "$display", "rd=%d", v000001fc26b62db0_0 {0 0 0};
+    %vpi_call 2 34 "$display", "rs1=%d", v000001fc26b63030_0 {0 0 0};
+    %vpi_call 2 35 "$display", "imm=%d", v000001fc26b633f0_0 {0 0 0};
+    %vpi_call 2 37 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb\tb_decoder.v";
+    "rtl\rtl_decoder.v";
